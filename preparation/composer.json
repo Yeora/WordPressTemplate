@@ -1,0 +1,33 @@
+{
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org",
+      "only": [
+        "wpackagist-plugin/*",
+        "wpackagist-theme/*"
+      ]
+    }
+  ],
+  "extra": {
+    "installer-paths": {
+      "wp-content/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "wp-content/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
+    }
+  },
+  "require": {
+    "wpackagist-plugin/cookie-consent-for-developers": "1.4.2",
+    "wpackagist-plugin/debug-bar": "1.1.2",
+    "wpackagist-plugin/wordfence": "7.5.0"
+  },
+  "require-dev": {
+    "szepeviktor/phpstan-wordpress": "^0.7.5"
+  },
+  "scripts": {
+    "phpstan": "vendor/bin/phpstan --memory-limit=2048"
+  }
+}
